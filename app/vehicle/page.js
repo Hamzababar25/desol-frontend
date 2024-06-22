@@ -33,7 +33,6 @@ export default function VehicleInfoPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const userId = searchParams.get("userId");
-  console.log(userId, "ar ara");
   const handleFileChange = async (e) => {
     const newFiles = Array.from(e.target.files);
     if (pictures.length + newFiles.length > maxPictures) {

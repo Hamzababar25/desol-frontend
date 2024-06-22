@@ -29,7 +29,6 @@ export default function Login() {
 
     const result = await response.json();
     if (result.success) {
-      console.log(result.userId, "uwu");
       alert("Login successful");
       router.push(`/vehicle?userId=${result.userId}`);
     } else {
