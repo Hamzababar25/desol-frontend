@@ -12,6 +12,7 @@ import {
   Link,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
+import utility from "@/utils/utility";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +20,7 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:3000/auth/login", {
+    const response = await fetch(utility.BASE_URL + "auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

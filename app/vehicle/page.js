@@ -86,7 +86,7 @@ export default function VehicleInfoPage() {
         user: userId,
       };
 
-      const res = await axios.post("http://localhost:3000/vehicle-info", data);
+      const res = await axios.post(utility.BASE_URL + "vehicle-info", data);
       if (res.data.success) {
         alert("Vehicle information submitted successfully.");
       } else {

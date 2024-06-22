@@ -2,7 +2,7 @@
 
 class Utility {
   constructor() {
-    this.BASE_URL = "https://upwork-back.onrender.com/";
+    this.BASE_URL = "https://desol-backend.onrender.com/";
   }
 
   convertBase64(file) {
