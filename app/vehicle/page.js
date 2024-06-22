@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import {
   Container,
   Typography,
@@ -21,7 +21,7 @@ import utility from "@/utils/utility";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
-export default function VehicleInfoPage() {
+function VehicleInfoContent() {
   const [carModel, setCarModel] = useState("");
   const [price, setPrice] = useState("");
   const [phone, setPhone] = useState("");
@@ -198,5 +198,13 @@ export default function VehicleInfoPage() {
         </Box>
       </form>
     </Container>
+  );
+}
+
+export default function VehicleInfoPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <VehicleInfoContent />
+    </Suspense>
   );
 }
